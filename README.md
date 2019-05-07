@@ -1,5 +1,7 @@
 [![Build Status](https://travis-ci.org/opspec-pkgs/aws.secretmanager.get-secret-value.svg?branch=master)](https://travis-ci.org/opspec-pkgs/aws.secretmanager.get-secret-value)
 
+<img src="icon.svg" alt="icon" height="100px">
+
 # Problem statement
 
 gets a secret value from aws secretmanager
