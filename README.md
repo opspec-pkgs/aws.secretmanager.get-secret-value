@@ -32,9 +32,9 @@ op:
     accessKeyId:
     secretAccessKey:
     secretName:
-    sessionToken:
     ### optional; uncomment to override default(s)
     # region: us-west-2
+    # sessionToken:  
   outputs:
     secretValue:
 ```
