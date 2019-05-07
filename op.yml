@@ -1,0 +1,44 @@
+description: gets a secret value from aws secretmanager
+inputs:
+  accessKeyId:
+    string:
+      constraints: { minLength: 20 }
+      description: access key for AWS
+  region:
+    string:
+      constraints: { minLength: 1 }
+      description: default region
+      default: us-west-2
+  secretAccessKey:
+    string:
+      constraints: { minLength: 20 }
+      description: secret access key for AWS
+      isSecret: true
+  sessionToken:
+    string:
+      isSecret: true
+      description: session token for AWS
+  secretName:
+    string:
+      constraints:
+        minLength: 1
+outputs:
+  secretValue:
+    string:
+      description: the value
+run:
+  container:
+    image: { ref: 'opspecpkgs/aws.secretmanager.get-secret-value:1.0.0' }
+    cmd: [/cmd.sh]
+    envVars:
+      AWS_ACCESS_KEY_ID: $(accessKeyId)
+      AWS_DEFAULT_REGION: $(region)
+      AWS_SECRET_ACCESS_KEY: $(secretAccessKey)
+      AWS_SESSION_TOKEN: $(sessionToken)
+      secretName:
+    files:
+      /cmd.sh:
+      /secretValue: $(secretValue)
+name: github.com/opspec-pkgs/aws.secretmanager.get-secret-value
+opspec: 0.1.6
+version: 1.0.0
