@@ -18,6 +18,7 @@ inputs:
     string:
       isSecret: true
       description: session token for AWS
+      default: " "
   secretName:
     string:
       constraints:
