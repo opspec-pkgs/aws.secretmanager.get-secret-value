@@ -29,7 +29,7 @@ outputs:
       description: the value
 run:
   container:
-    image: { ref: 'opspecpkgs/aws.secretmanager.get-secret-value:1.0.0' }
+    image: { ref: 'opspecpkgs/aws.secretmanager.get-secret-value:1.0.1' }
     cmd: [/cmd.sh]
     envVars:
       AWS_ACCESS_KEY_ID: $(accessKeyId)
@@ -42,4 +42,4 @@ run:
       /secretValue: $(secretValue)
 name: github.com/opspec-pkgs/aws.secretmanager.get-secret-value
 opspec: 0.1.6
-version: 1.0.0
+version: 1.0.1
