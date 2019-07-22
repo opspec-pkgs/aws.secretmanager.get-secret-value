@@ -1,8 +1,7 @@
 #!/usr/bin/env sh
 
-aws \
+echo -n "$(aws \
     secretsmanager \
     get-secret-value \
     --secret-id "$secretName" \
-    --query SecretString \
-    --output text > /secretValue
+    --output json | jq '.SecretString // .SecretBinary' --raw-output)" > /secretValue
