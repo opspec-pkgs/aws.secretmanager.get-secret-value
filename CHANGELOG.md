@@ -5,7 +5,8 @@ All notable changes will be documented in this file in accordance with
 
 ## \[Unreleased]
 
-## \[1.0.1] - 2019-07-22
+## \[1.0.1] - 2019-10-03
 
 ### Fixed
 - newline added to secret text
+- aws error not failing op
